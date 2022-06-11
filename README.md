@@ -1,24 +1,18 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Purpose and learning goals
+- Expose API endpoints using a Rails API project based on aggregated data from 3rd party external APIs
+- Expose an API requiring an authentication token
+- Allow CRUD functionality with exposed API endpoints
+- Research and consume additional APIs as needed
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Setup
+- `git clone`
+- `bundle`
+- `rails db{create, migrate}`
+- `rails s`
+- Use Postman, a web browser or make a cURL request
+<!-- - Generate api key: /lorem
+- Sample request: /lorem
+- Link to docs -->
