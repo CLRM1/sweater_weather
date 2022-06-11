@@ -10,7 +10,7 @@
 # Setup
 - `git clone`
 - `bundle`
-- `rails db{create, migrate}`
+- `rails db:{create, migrate}`
 - `rails s`
 - Use Postman, a web browser or make a cURL request
 <!-- - Generate api key: /lorem
