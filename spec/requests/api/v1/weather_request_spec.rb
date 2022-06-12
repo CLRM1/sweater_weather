@@ -45,13 +45,13 @@ RSpec.describe 'Weather Forecast API' do
 
     expect(response).to be_successful
 
-    expect(daily_weather[:date]).to be_a(String)
-    expect(daily_weather[:sunrise]).to be_a(String)
-    expect(daily_weather[:sunset]).to be_a(String)
-    expect(daily_weather[:max_temp]).to be_a(Float)
-    expect(daily_weather[:min_temp]).to be_a(Float)
-    expect(daily_weather[:conditions]).to be_a(String)
-    expect(daily_weather[:icon]).to be_a(String)
+    expect(daily_weather[0][:date]).to be_a(String)
+    expect(daily_weather[0][:sunrise]).to be_a(String)
+    expect(daily_weather[0][:sunset]).to be_a(String)
+    expect(daily_weather[0][:max_temp]).to be_a(Float)
+    expect(daily_weather[0][:min_temp]).to be_a(Float)
+    expect(daily_weather[0][:conditions]).to be_a(String)
+    expect(daily_weather[0][:icon]).to be_a(String)
 
   end
 
@@ -65,10 +65,10 @@ RSpec.describe 'Weather Forecast API' do
 
     expect(response).to be_successful
 
-    expect(hourly_weather[:time]).to be_a(String)
-    expect(hourly_weather[:temperature]).to be_a(Float)
-    expect(hourly_weather[:conditions]).to be_a(String)
-    expect(hourly_weather[:icon]).to be_a(String)
+    expect(hourly_weather[0][:time]).to be_a(String)
+    expect(hourly_weather[0][:temperature]).to be_a(Float)
+    expect(hourly_weather[0][:conditions]).to be_a(String)
+    expect(hourly_weather[0][:icon]).to be_a(String)
 
   end
 end
