@@ -4,7 +4,7 @@ class ImageService
 
     conn = Faraday.new(
       url: "https://api.pexels.com/v1/search?query=#{city}",
-      headers: {"x-api-key" => ENV['pexel_api_key']})
+      headers: {"Authorization" => ENV['pexel_api_key']})
 
     response = conn.get
 
