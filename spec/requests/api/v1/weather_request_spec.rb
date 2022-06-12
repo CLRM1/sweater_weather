@@ -2,10 +2,6 @@ require 'rails_helper'
 
 RSpec.describe 'Weather Forecast API' do
 
-  # GET /api/v1/forecast?location=denver,co
-  # Content-Type: application/json
-  # Accept: application/json
-
   it 'can get the current weather for a city' do
 
     get '/api/v1/forecast?location=denver,co'
@@ -18,7 +14,6 @@ RSpec.describe 'Weather Forecast API' do
 
     expect(body).to be_a(Hash)
     expect(forecast).to be_a(Hash)
-    # should this be null?
     expect(forecast[:id]).to be(nil)
     expect(forecast[:type]).to eq('forecast')
 
