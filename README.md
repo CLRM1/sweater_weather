@@ -12,7 +12,9 @@
 - `bundle`
 - `rails db:{create, migrate}`
 - `rails s`
-- Use Postman, a web browser or make a cURL request
+- Make a request
+- GET `http://localhost:3000/api/v1/forecast?location=denver,co`
+- GET `http://localhost:3000/api/v1/backgrounds?location=denver`
 <!-- - Generate api key: /lorem
 - Sample request: /lorem
 - Link to docs -->
