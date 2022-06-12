@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Weather Facade' do
 
   it 'returns the weather based on a location' do
-    location = 'Denver,CO'
+    location = [39.738453, -104.984853]
     forecast = WeatherFacade.get_forecast(location)
     expect(forecast.datetime).to be_a(String)
     expect(forecast.sunrise).to be_a(String)

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Weather Service' do
   it 'gets weather data based on longitude and latitude' do
-    location = 'Denver,CO'
+    location = [39.738453, -104.984853]
     forecast = WeatherService.get_forecast(location)
 
     expect(forecast).to be_a(Hash)

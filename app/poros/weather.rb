@@ -29,9 +29,9 @@ class Weather
     @visibility = data[:current][:visibility].to_f
     @conditions = data[:current][:weather][0][:description]
     @icon = data[:current][:weather][0][:icon]
-    @daily = data[:daily][0..5]
+    @daily = data[:daily][0..4]
     @days = data[:daily].map {|day| Time.at(day[:dt]).to_datetime}
-    @hourly = data[:hourly][0..8]
+    @hourly = data[:hourly][0..7]
     @hours = data[:hourly].map {|hour| Time.at(hour[:dt]).to_datetime}
   end
 end
