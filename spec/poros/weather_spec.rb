@@ -2,14 +2,14 @@ require 'rails_helper'
 
 RSpec.describe Weather do
 
-  xit 'exists' do
-    json_response = File.open('./spec/fixtures/forecast.json')
-
-    forecast = Weather.new(json_response)
-    require 'pry'; binding.pry
-
-    expect(forecast).to be_a(Weather)
-  end
+  # xit 'exists' do
+  #   json_response = File.open('./spec/fixtures/forecast.json')
+  #
+  #   forecast = Weather.new(json_response)
+  #   require 'pry'; binding.pry
+  #
+  #   expect(forecast).to be_a(Weather)
+  # end
 end
 
 
