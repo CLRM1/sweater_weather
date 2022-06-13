@@ -2,16 +2,6 @@ require 'rails_helper'
 
 RSpec.describe 'Book API' do
 
-
-#   Your endpoint should follow this format:
-# GET /api/v1/book-search?location=denver,co&quantity=5
-# please do not deviate from the names of the endpoint or query parameter, be sure it is called “book-search” and “location” and “quantity”, respectively
-# **quantity should be a positive integer greater than 0
-# Your API will return:
-# the destination city
-# the forecast in that city right now
-# the total number of search results found
-# a quantity of books about the destination city
   it 'returns books based on a destination city and quantity' do
     get '/api/v1/book-search?location=denver,co&quantity=5'
 
