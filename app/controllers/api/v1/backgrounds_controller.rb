@@ -5,3 +5,5 @@ class Api::V1::BackgroundsController < ApplicationController
     render json: ImageSerializer.format_image_data(image_data)
   end
 end
+
+p
