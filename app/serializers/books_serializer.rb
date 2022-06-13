@@ -14,7 +14,6 @@ class BooksSerializer
           },
           total_books_found: books.total_books_found,
           books: books.books[:docs][1..quantity.to_i].map {|book|
-            # require 'pry'; binding.pry
             {
               isbn: book[:isbn],
               title: book[:title],

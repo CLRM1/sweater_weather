@@ -44,7 +44,12 @@ RSpec.describe 'Book API' do
     expect(response[:attributes][:books][0][:publisher]).to be_a(Array)
     expect(response[:attributes][:books][0][:publisher][0]).to be_a(String)
   end
-  # it 'returns an error when the quantity is negative' do
-  #
-  # end
+  it 'returns an error when the quantity is negative' do
+    get '/api/v1/book-search?location=denver,co&quantity=-5'
+
+    body = JSON.parse(response.body, symbolize_names: true)
+    response = body[:data]
+
+    expect(response).to eq(400)
+  end
 end
