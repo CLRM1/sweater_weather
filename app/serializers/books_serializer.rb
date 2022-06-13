@@ -1,4 +1,4 @@
-class BooksResponseSerializer
+class BooksSerializer
 
   def self.format_books_response(forecast, books, location)
     {
@@ -15,7 +15,7 @@ class BooksResponseSerializer
           total_books_found: books.total_books_found,
           books: books.books.map {|book|
             {
-              isbn: book[:isbn][0],
+              isbn: book[:isbn],
               title: book[:title],
               publisher: book[:publisher][0]
             }}

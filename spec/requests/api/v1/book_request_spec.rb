@@ -14,7 +14,7 @@ RSpec.describe 'Book API' do
 # a quantity of books about the destination city
   it 'returns books based on a destination city and quantity' do
     get '/api/v1/book-search?location=denver,co&quantity=5'
-
+    
     body = JSON.parse(response.body, symbolize_names: true)
     books = body[:data][:attributes][:books]
 

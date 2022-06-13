@@ -2,7 +2,7 @@ class Book
   attr_reader :books, :total_books_found
   def initialize(book_data)
     @total_books_found = book_data[:numFound]
-    @books = book_data[:docs][0..4]
+    @books = book_data[:docs][1..5]
   end
 end
 # @isbn_0 = @books[0][:isbn]
