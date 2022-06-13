@@ -1,8 +1,10 @@
 class Book
   attr_reader :books, :total_books_found
   def initialize(book_data)
+    # require 'pry'; binding.pry
     @total_books_found = book_data[:numFound]
-    @books = book_data[:docs][1..5]
+    @books = book_data
+    # require 'pry'; binding.pry
   end
 end
 # @isbn_0 = @books[0][:isbn]

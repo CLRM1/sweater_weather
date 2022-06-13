@@ -29,9 +29,7 @@ RSpec.describe 'Book API' do
     body = JSON.parse(response.body, symbolize_names: true)
     response = body[:data]
 
-    # require 'pry'; binding.pry
     expect(response).to be_a(Hash)
-    # require 'pry'; binding.pry
     expect(response[:type]).to eq('books')
     expect(response[:id]).to eq(nil)
     expect(response[:attributes]).to be_a(Hash)
@@ -50,42 +48,3 @@ RSpec.describe 'Book API' do
   #
   # end
 end
-
-
-# {
-#   "data": {
-#     "id": "null",
-#     "type": "books",
-#     "attributes": {
-#       "destination": "denver,co",
-#       "forecast": {
-#         "summary": "Cloudy with a chance of meatballs",
-#         "temperature": "83 F"
-#       },
-#       "total_books_found": 172,
-#       "books": [
-#         {
-#           "isbn": [
-#             "0762507845",
-#             "9780762507849"
-#           ],
-#           "title": "Denver, Co",
-#           "publisher": [
-#             "Universal Map Enterprises"
-#           ]
-#         },
-#         {
-#           "isbn": [
-#             "9780883183663",
-#             "0883183668"
-#           ],
-#           "title": "Photovoltaic safety, Denver, CO, 1988",
-#           "publisher": [
-#             "American Institute of Physics"
-#           ]
-#         },
-#         { ... same format for books 3, 4 and 5 ... }
-#       ]
-#     }
-#   }
-# }
