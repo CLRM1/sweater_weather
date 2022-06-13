@@ -43,7 +43,8 @@ RSpec.describe 'Book API' do
     expect(response[:attributes][:books]).to be_a(Array)
     expect(response[:attributes][:books][0][:isbn]).to be_a(Array)
     expect(response[:attributes][:books][0][:title]).to be_a(String)
-    expect(response[:attributes][:books][0][:publisher]).to be_a(String)
+    expect(response[:attributes][:books][0][:publisher]).to be_a(Array)
+    expect(response[:attributes][:books][0][:publisher][0]).to be_a(String)
   end
   # it 'returns an error when the quantity is negative' do
   #

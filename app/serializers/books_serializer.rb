@@ -17,7 +17,7 @@ class BooksSerializer
             {
               isbn: book[:isbn],
               title: book[:title],
-              publisher: book[:publisher][0]
+              publisher: book[:publisher]
             }}
         }
       }
