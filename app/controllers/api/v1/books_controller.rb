@@ -5,10 +5,11 @@ class Api::V1::BooksController < ApplicationController
     forecast = WeatherFacade.get_forecast(coordinates)
     books = BooksFacade.get_books(params[:location], params[:quantity])
     books_response = BooksSerializer.format_books_response(forecast, books, params[:location], params[:quantity])
-    if positive?(params[:quantity].to_i)
+
+    if params[:quantity].to_i.positive?
       render json: books_response, status: 201
     else
-      render json: "Quantity must be positive", status: 400
+      render json: {data: "Error: quantity must be positive"}, status: 400
     end
   end
 end

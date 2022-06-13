@@ -48,8 +48,8 @@ RSpec.describe 'Book API' do
     get '/api/v1/book-search?location=denver,co&quantity=-5'
 
     body = JSON.parse(response.body, symbolize_names: true)
-    response = body[:data]
 
-    expect(response).to eq(400)
+    expect(response.status).to eq(400)
+    expect(body[:data]).to eq("Error: quantity must be positive")
   end
 end
