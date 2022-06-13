@@ -6,7 +6,7 @@ class Book
   end
 end
 
-# refactor
+# refactor sketch
 # @isbn_0 = @books[0][:isbn]
 # @isbn_1= @books[1][:isbn]
 # @isbn_2 = @books[2][:isbn]
