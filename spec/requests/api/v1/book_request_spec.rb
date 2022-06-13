@@ -14,7 +14,7 @@ RSpec.describe 'Book API' do
 # a quantity of books about the destination city
   it 'returns books based on a destination city and quantity' do
     get '/api/v1/book-search?location=denver,co&quantity=5'
-    
+
     body = JSON.parse(response.body, symbolize_names: true)
     books = body[:data][:attributes][:books]
 
@@ -24,23 +24,26 @@ RSpec.describe 'Book API' do
   end
 
   it 'returns books in the correct JSON format' do
+    get '/api/v1/book-search?location=denver,co&quantity=5'
 
     body = JSON.parse(response.body, symbolize_names: true)
-    books = body[:data][:attributes][:books]
+    response = body[:data]
 
-    expect(books[:data]).to be_a(Hash)
-    expect(books[:type]).to eq('books')
-    expect(books[:attributes]).to be_a(Hash)
-    expect(books[:attributes][:destination]).to be_a(String)
-    expect(books[:attributes][:forecast]).to be_a(Hash)
-    expect(books[:attributes][:forecast][:summary]).to be_a(String)
-    expect(books[:attributes][:forecast][:temperature]).to be_a(String)
-    expect(books[:attributes][:total_books_found]).to be_a(Integer)
-    expect(books[:attributes][:books]).to be_a(Array)
-    expect(books[:attributes][:books][0][:isbn]).to be_a(Array)
-    expect(books[:attributes][:books][0][:title]).to be_a(String)
-    expect(books[:attributes][:books][0][:publisher]).to be_a(Array)
-    expect(books[:attributes][:books][0][:publisher][0]).to be_a(String)
+    # require 'pry'; binding.pry
+    expect(response).to be_a(Hash)
+    # require 'pry'; binding.pry
+    expect(response[:type]).to eq('books')
+    expect(response[:id]).to eq(nil)
+    expect(response[:attributes]).to be_a(Hash)
+    expect(response[:attributes][:destination]).to be_a(String)
+    expect(response[:attributes][:forecast]).to be_a(Hash)
+    expect(response[:attributes][:forecast][:summary]).to be_a(String)
+    expect(response[:attributes][:forecast][:temperature]).to be_a(Float)
+    expect(response[:attributes][:total_books_found]).to be_a(Integer)
+    expect(response[:attributes][:books]).to be_a(Array)
+    expect(response[:attributes][:books][0][:isbn]).to be_a(Array)
+    expect(response[:attributes][:books][0][:title]).to be_a(String)
+    expect(response[:attributes][:books][0][:publisher]).to be_a(String)
   end
   # it 'returns an error when the quantity is negative' do
   #
