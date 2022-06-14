@@ -7,4 +7,8 @@ class MapsFacade
     [lat,long]
   end
 
+  def self.get_directions(origin, destination)
+    MapsService.get_directions(origin, destination)
+  end
+
 end
