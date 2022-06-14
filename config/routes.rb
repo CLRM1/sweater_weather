@@ -10,6 +10,4 @@ Rails.application.routes.draw do
       post '/road_trip', to: 'users#trip'
     end
   end
-
-
 end
