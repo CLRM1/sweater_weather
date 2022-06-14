@@ -33,8 +33,6 @@ RSpec.describe 'Sessions API' do
 
     expect(response).to be_successful
 
-
-    # require 'pry'; binding.pry
     expect(response_data[:data]).to be_a(Hash)
     expect(response_data[:data][:type]).to eq('users')
     expect(response_data[:data][:id]).to be_a(String)
@@ -43,29 +41,3 @@ RSpec.describe 'Sessions API' do
     expect(response_data[:data][:attributes][:api_key]).to be_a(String)
   end
 end
-
-
-
-# status: 200
-# body:
-#
-# {
-#   "data": {
-#     "type": "users",
-#     "id": "1",
-#     "attributes": {
-#       "email": "whatever@example.com",
-#       "api_key": "jgn983hy48thw9begh98h4539h4"
-#     }
-#   }
-# }
-
-
-# POST /api/v1/sessions
-# Content-Type: application/json
-# Accept: application/json
-#
-# {
-#   "email": "whatever@example.com",
-#   "password": "password"
-# }
