@@ -1,33 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Road Trip API' do
-  #     POST /api/v1/road_trip
-  # Content-Type: application/json
-  # Accept: application/json
-  
-  # body:
-  
-  # {
-  #   "origin": "Denver,CO",
-  #   "destination": "Pueblo,CO",
-  #   "api_key": "jgn983hy48thw9begh98h4539h4"
-  # }
-#  response:
-  # {
-  #   "data": {
-  #     "id": null,
-  #     "type": "roadtrip",
-  #     "attributes": {
-  #       "start_city": "Denver, CO",
-  #       "end_city": "Estes Park, CO",
-  #       "travel_time": "2 hours, 13 minutes"
-  #       "weather_at_eta": {
-  #         "temperature": 59.4,
-  #         "conditions": "partly cloudy with a chance of meatballs"
-  #       }
-  #     }
-  #   }
-  # }
 
   it 'returns road trip information in the correct format' do
     user = User.create!(email: 'chris@mail.com', password: '123', password_confirmation: '123', api_key: "n3zhtreTKr3Veux1Ddmnjw")
@@ -45,7 +18,6 @@ RSpec.describe 'Road Trip API' do
     post '/api/v1/road_trip', headers: headers, params: JSON.generate(body)
     
     response_data = JSON.parse(response.body, symbolize_names: true)
-    # require 'pry'; binding.pry
     expect(response).to be_successful
     expect(response_data[:data]).to be_a(Hash)
     expect(response_data[:data][:id]).to eq(nil)
@@ -57,7 +29,5 @@ RSpec.describe 'Road Trip API' do
     expect(response_data[:data][:attributes][:weather_at_eta]).to be_a(Hash)
     expect(response_data[:data][:attributes][:weather_at_eta][:temperature]).to be_a(Float)
     expect(response_data[:data][:attributes][:weather_at_eta][:conditions]).to be_a(String)
-    
-
   end
 end

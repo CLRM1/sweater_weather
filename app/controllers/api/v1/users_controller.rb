@@ -23,7 +23,6 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def trip
-    # require 'pry'; binding.pry
     user = User.find_by(api_key: params[:api_key])
 
     if user
@@ -32,8 +31,6 @@ class Api::V1::UsersController < ApplicationController
       directions = MapsFacade.get_directions(params[:origin], params[:destination])
       forecast = WeatherFacade.get_forecast(destination_coordinates)
       
-      # require 'pry'; binding.pry
-      # travel_time = ActiveSupport::Duration.build(directions[:route][:legs][0][:formattedTime]).parts
       travel_time = directions[:route][:legs][0][:formattedTime]
       
 
