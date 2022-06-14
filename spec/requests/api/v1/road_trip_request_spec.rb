@@ -4,6 +4,7 @@ RSpec.describe 'Road Trip API' do
 
   it 'returns road trip information in the correct format' do
     user = User.create!(email: 'chris@mail.com', password: '123', password_confirmation: '123', api_key: "n3zhtreTKr3Veux1Ddmnjw")
+    
     headers = {
       "Content-Type": "application/json",
       "Accept": "application/json"
