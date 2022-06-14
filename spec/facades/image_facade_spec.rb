@@ -10,5 +10,4 @@ RSpec.describe 'Image Facade' do
     expect(image_data.photographer).to be_a(String)
     expect(image_data.photographer_url).to be_a(String)
   end
-  
 end
