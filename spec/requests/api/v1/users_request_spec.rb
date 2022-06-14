@@ -28,4 +28,23 @@ RSpec.describe 'Users API' do
     expect(response_data[:data][:attributes][:email]).to eq("chris22@mail.com")
     expect(response_data[:data][:attributes][:api_key]).to be_a(String)
   end
+
+  it 'returns an error if the passwords do not match' do
+    headers = {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+      }
+
+    body = {
+      "email": "chris22@mail.com",
+      "password": "password123",
+      "password_confirmation": "passwor"
+      }
+
+    post '/api/v1/users', headers: headers, params: JSON.generate(body)
+
+    response_data = JSON.parse(response.body, symbolize_names: true)
+
+    expect(response.status).to eq(400)
+  end
 end

@@ -5,11 +5,14 @@ class Api::V1::UsersController < ApplicationController
 
   def create
     params[:api_key] = SecureRandom.urlsafe_base64
+    if params[:password] == params[:password_confirmation]
+      user = User.create(user_params)
+      user_data = JSON.parse((user.to_json), symbolize_names: true)
 
-    user = User.create(user_params)
-    user_data = JSON.parse((user.to_json), symbolize_names: true)
-
-    render json: UserSerializer.format_create_user_response(user_data), status: 201
+      render json: UserSerializer.format_create_user_response(user_data), status: 201
+    else
+      render json: {data: "Error: passwords do not match"}, status: 400
+    end
   end
 
   def login
