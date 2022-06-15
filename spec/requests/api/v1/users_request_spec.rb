@@ -23,7 +23,7 @@ RSpec.describe 'Users API' do
 
     expect(response_data[:data]).to be_a(Hash)
     expect(response_data[:data][:type]).to eq('users')
-    expect(response_data[:data][:id]).to be_a(Integer)
+    expect(response_data[:data][:id]).to be_a(String)
     expect(response_data[:data][:attributes]).to be_a(Hash)
     expect(response_data[:data][:attributes][:email]).to eq("chris21@mail.com")
     expect(response_data[:data][:attributes][:api_key]).to be_a(String)
