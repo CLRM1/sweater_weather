@@ -3,10 +3,10 @@ class UserSerializer
     {
       data: {
         type: "users",
-        id: user_data[:id],
+        id: user_data.id.to_s,
         attributes: {
-          email: user_data[:email],
-          api_key: user_data[:api_key]
+          email: user_data.email,
+          api_key: user_data.api_key
         }
       }
     }
