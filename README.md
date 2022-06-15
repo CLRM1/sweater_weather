@@ -12,9 +12,20 @@
 - `bundle`
 - `rails db:{create, migrate}`
 - `rails s`
-- Make a request
-- GET `http://localhost:3000/api/v1/forecast?location=denver,co`
-- GET `http://localhost:3000/api/v1/backgrounds?location=denver`
-<!-- - Generate api key: /lorem
-- Sample request: /lorem
-- Link to docs -->
+
+# Make a request
+GET `http://localhost:3000/api/v1/forecast?location=denver,co`
+- Get the current forecast based on a search with query parameter `location`
+
+GET `http://localhost:3000/api/v1/backgrounds?location=denver`
+- Get an image based on the location
+
+POST `http://localhost:3000/api/v1/users` `body: email, password, password_confirmation`
+- Create a user and get an API key in the response, include email, password and password_confirmation in the request body
+
+POST `http://localhost:3000/api/v1/sessions` `body: email, password`
+- Log a user in and get their API key, include email and password in the request body
+
+POST `http://localhost:3000/api/v1/road_trip` `body: origin, destination, api_key`
+- Create a "road trip" with a origin and desitination, include origin, destination and api_key in the request body
+
