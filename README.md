@@ -9,14 +9,22 @@ The goal with this project is to provide the necessary API endpoints and data th
 
 # Purpose 
 - Exposes API endpoints using a Rails API project based on aggregated data from 3 party external APIs (Open Weather, MapQuest, Pexels)
-- Exposes a API endpoints that require an authentication token
+- Exposes API endpoints that require an authentication token
 - Allows for CRUD functionality with exposed API endpoints
 
 # Setup
+Get api keys from the folllowing providers: 
+- [MapQuest](https://developer.mapquest.com), [Open Weather](https://openweathermap.org/api), [Pexels](https://www.pexels.com/api/)
+
+Setup up the repo locally
 - `git clone`
+- `cd sweater_weather`
 - `bundle`
 - `rails db:{create, migrate}`
-- `rails s`
+- `bundle exec figaro install`
+- `cd config` open the application.yml file and add you API keys as environment varialbes: 
+- mapquest_api_key: 'key_here', open_weather_api...pexel_api_key...
+- `rails s` to start the server on localhost:3000
 
 # Make a request
 GET `http://localhost:3000/api/v1/forecast?location=denver,co`
