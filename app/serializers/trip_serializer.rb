@@ -15,7 +15,6 @@ class TripSerializer
           }
         }
       }
-
     }
   end
 
@@ -31,7 +30,6 @@ class TripSerializer
           weather_at_eta: []
         }
       }
-
     }
   end
 
