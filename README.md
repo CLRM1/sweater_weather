@@ -3,7 +3,7 @@
 # Description
 Sweater weather, asks the question: should you bring a sweater on your next road trip? 
 
-The goal with this project is to provide the necessary API endpoints and data that a front-end team would need to build out a webpage like the wirefram below: 
+The goal with this project is to provide the necessary API endpoints and data that a front-end team would need to build out a webpage like the wireframe below: 
 
 <img width="820" alt="Screen Shot 2022-06-15 at 12 56 06 PM" src="https://user-images.githubusercontent.com/26349568/173903767-44956d7a-caf8-48f1-802d-5be6802b2303.png">
 
