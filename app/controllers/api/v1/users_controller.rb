@@ -37,7 +37,6 @@ class Api::V1::UsersController < ApplicationController
       directions = MapsFacade.get_directions(params[:origin], params[:destination])
       forecast = WeatherFacade.get_forecast(destination_coordinates)
       travel_time = directions[:route][:legs][0][:formattedTime]
-      
       render json: TripSerializer.format_trip(travel_time, params[:origin], params[:destination], forecast)
     elsif impossible.count > 0
       render json: TripSerializer.format_impossible_trip(params[:origin], params[:destination]), status: 201
