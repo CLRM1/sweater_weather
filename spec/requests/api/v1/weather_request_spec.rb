@@ -27,7 +27,6 @@ RSpec.describe 'Weather Forecast API' do
     expect(current_weather[:visibility]).to be_a(Float)
     expect(current_weather[:conditions]).to be_a(String)
     expect(current_weather[:icon]).to be_a(String)
-
   end
 
   it 'can get the daily weather for the next 5 days for a city' do
@@ -47,6 +46,20 @@ RSpec.describe 'Weather Forecast API' do
     expect(daily_weather[0][:min_temp]).to be_a(Float)
     expect(daily_weather[0][:conditions]).to be_a(String)
     expect(daily_weather[0][:icon]).to be_a(String)
+  end
+
+  it 'does not return extra fields from open weather api' do
+    
+    get '/api/v1/forecast?location=denver,co'
+
+    body = JSON.parse(response.body, symbolize_names: true)
+    forecast = body[:data]
+    current_weather = forecast[:attributes][:current_weather]
+    
+    expect(forecast).to_not have_key("lat")
+    expect(forecast).to_not have_key("long")
+    expect(forecast).to_not have_key("lat")
+    expect(forecast).to_not have_key("timezone")
   end
 
   it 'can get the hourly weather for a city' do
