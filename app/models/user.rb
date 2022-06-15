@@ -1,3 +1,5 @@
+require 'securerandom'
+
 class User < ApplicationRecord
 
   validates :email, uniqueness: true, presence: true
@@ -6,4 +8,8 @@ class User < ApplicationRecord
   validates_presence_of :password_confirmation
 
   has_secure_password
+
+  def self.generate_api_key
+    SecureRandom.urlsafe_base64
+  end
 end

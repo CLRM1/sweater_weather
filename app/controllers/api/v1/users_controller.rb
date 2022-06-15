@@ -1,14 +1,10 @@
-require 'securerandom'
-require 'active_support/duration'
-
 class Api::V1::UsersController < ApplicationController
 
   def create
     if params[:password] == params[:password_confirmation] && User.find_by(email: params[:email]) == nil
-      params[:api_key] = SecureRandom.urlsafe_base64
+      params[:api_key] = User.generate_api_key
       user = User.create(user_params)
       user_data = JSON.parse((user.to_json), symbolize_names: true)
-
       render json: UserSerializer.format_create_user_response(user_data), status: 201
     elsif User.find_by(email: params[:email])
       render json: {data: "Error: email already taken"}, status: 400
