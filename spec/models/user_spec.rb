@@ -8,4 +8,11 @@ RSpec.describe User do
     it {should validate_uniqueness_of(:api_key)}
     it {should validate_presence_of(:password)}
   end
+
+  describe 'class methods' do
+    it 'generates an api key' do
+      api_key = User.generate_api_key
+      expect(api_key).to be_a(String)
+    end
+  end
 end
