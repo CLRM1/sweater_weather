@@ -32,16 +32,16 @@ class Api::V1::UsersController < ApplicationController
     origin_coordinates = MapsFacade.get_coordinates(params[:origin])
     destination_coordinates = MapsFacade.get_coordinates(params[:destination])
     impossible = MapsFacade.get_directions(params[:origin], params[:destination])[:info][:messages]
-
-    if user && impossible == []
+    
+    if params[:api_key] == nil
+      render json: {data: "Error: API key not found"}, status: 401 
+    elsif user && impossible == []
       directions = MapsFacade.get_directions(params[:origin], params[:destination])
       forecast = WeatherFacade.get_forecast(destination_coordinates)
       travel_time = directions[:route][:legs][0][:formattedTime]
       render json: TripSerializer.format_trip(travel_time, params[:origin], params[:destination], forecast)
     elsif impossible.count > 0
       render json: TripSerializer.format_impossible_trip(params[:origin], params[:destination]), status: 201
-    else
-      render json: {data: "Error: API key not found"}, status: 401
     end
   end
 

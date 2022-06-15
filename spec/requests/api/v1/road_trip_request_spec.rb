@@ -60,4 +60,24 @@ RSpec.describe 'Road Trip API' do
     expect(response_data[:data][:attributes][:travel_time]).to eq('impossible')
     expect(response_data[:data][:attributes][:weather_at_eta]).to be_a(Array)
   end
+
+  it 'returns an error when no api key is entered' do
+    user = User.create!(email: 'chris@mail.com', password: '123', password_confirmation: '123', api_key: "n3zhtreTKr3Veux1Ddmnjw")
+    
+    headers = {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    }
+
+    body = {
+      "origin": "New York, NY", 
+      "destination": "London, UK",
+    }
+
+    post '/api/v1/road_trip', headers: headers, params: JSON.generate(body)
+    
+    response_data = JSON.parse(response.body, symbolize_names: true)
+
+    expect(response.status).to eq(401)
+  end
 end
