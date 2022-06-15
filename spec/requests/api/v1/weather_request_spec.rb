@@ -47,7 +47,6 @@ RSpec.describe 'Weather Forecast API' do
     expect(daily_weather[0][:min_temp]).to be_a(Float)
     expect(daily_weather[0][:conditions]).to be_a(String)
     expect(daily_weather[0][:icon]).to be_a(String)
-
   end
 
   it 'can get the hourly weather for a city' do
@@ -64,6 +63,5 @@ RSpec.describe 'Weather Forecast API' do
     expect(hourly_weather[0][:temperature]).to be_a(Float)
     expect(hourly_weather[0][:conditions]).to be_a(String)
     expect(hourly_weather[0][:icon]).to be_a(String)
-
   end
 end
