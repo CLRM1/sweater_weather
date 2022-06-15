@@ -33,7 +33,7 @@ class Api::V1::UsersController < ApplicationController
     destination_coordinates = MapsFacade.get_coordinates(params[:destination])
     impossible = MapsFacade.get_directions(params[:origin], params[:destination])[:info][:messages]
     
-    if params[:api_key] == nil
+    if params[:api_key] == nil || user == nil
       render json: {data: "Error: API key not found"}, status: 401 
     elsif user && impossible == []
       directions = MapsFacade.get_directions(params[:origin], params[:destination])
