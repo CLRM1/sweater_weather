@@ -22,7 +22,7 @@ Setup up the repo locally
 - `bundle`
 - `rails db:{create, migrate}`
 - `bundle exec figaro install`
-- `cd config` open the application.yml file and add you API keys as environment varialbes: 
+- `cd config` open the application.yml file and add your API keys as environment varialbes: 
 - mapquest_api_key: 'key_here', open_weather_api...pexel_api_key...
 - `rails s` to start the server on localhost:3000
 
