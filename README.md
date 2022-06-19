@@ -8,7 +8,7 @@ The goal with this project is to provide the necessary API endpoints and data th
 <img width="820" alt="Screen Shot 2022-06-15 at 12 56 06 PM" src="https://user-images.githubusercontent.com/26349568/173903767-44956d7a-caf8-48f1-802d-5be6802b2303.png">
 
 # Purpose 
-- Exposes API endpoints using a Rails API project based on aggregated data from 3 party external APIs (Open Weather, MapQuest, Pexels)
+- Exposes API endpoints using a Rails API project based on aggregated data from 3 external APIs (Open Weather, MapQuest, Pexels)
 - Exposes API endpoints that require an authentication token
 - Allows for CRUD functionality with exposed API endpoints
 
