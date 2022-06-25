@@ -32,7 +32,7 @@ RSpec.describe 'Road Trip API' do
     expect(response_data[:data][:attributes][:weather_at_eta][:conditions]).to be_a(String)
   end
 
-  it 'returns impossible when their is no route' do
+  it 'returns impossible when there is no route' do
     user = User.create!(email: 'chris@mail.com', password: '123', password_confirmation: '123', api_key: "n3zhtreTKr3Veux1Ddmnjw")
     
     headers = {
