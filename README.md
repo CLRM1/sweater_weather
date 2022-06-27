@@ -1,32 +1,32 @@
-# README
 
-# Description
-Sweater weather, asks the question: should you bring a sweater on your next road trip? 
+# Sweater Weather 
 
-The goal with this project is to provide the necessary API endpoints and data that a front-end team would need to build out a webpage like the wireframe below: 
+Sweater Weather is a rails API that provides weather forecast data, images, and estimated travel time. It consumes data from 3 external APIs (Open Weather, MapQuest, Pexels) and exposes 5 endpoints. This was a solo project by Chris Romero. 
 
-<img width="820" alt="Screen Shot 2022-06-15 at 12 56 06 PM" src="https://user-images.githubusercontent.com/26349568/173903767-44956d7a-caf8-48f1-802d-5be6802b2303.png">
-
-# Purpose 
-- Exposes API endpoints using a Rails API project based on aggregated data from 3 external APIs (Open Weather, MapQuest, Pexels)
-- Exposes API endpoints that require an authentication token
-- Allows for CRUD functionality with exposed API endpoints
+## Available endpoints:
+- [Current weather forecast](#forecast)
+- [Image search](#images)
+- [Create a user](#users)
+- [Log a user in](#log-in)
+- [Road Trip](#road-trip)
 
 # Setup
 Get api keys from the folllowing providers: 
 - [MapQuest](https://developer.mapquest.com), [Open Weather](https://openweathermap.org/api), [Pexels](https://www.pexels.com/api/)
 
-Setup up the repo locally
+Setup the repo locally
 - `git clone`
 - `cd sweater_weather`
 - `bundle`
 - `rails db:{create, migrate}`
 - `bundle exec figaro install`
 - `cd config` open the application.yml file and add your API keys as environment variables: 
-- mapquest_api_key: 'key_here', open_weather_api...pexel_api_key...
+-  `mapquest_api_key: 'key_here', open_weather_api...pexel_api_key...`
 - `rails s` to start the server on localhost:3000
 
 # Make a request
+
+## Forecast
 GET `http://localhost:3000/api/v1/forecast?location=denver,co`
 - Get the current forecast based on a search with query parameter `location`
 - Example response: 
@@ -149,7 +149,7 @@ GET `http://localhost:3000/api/v1/forecast?location=denver,co`
     }
 }
 ```
-
+## Images
 GET `http://localhost:3000/api/v1/backgrounds?location=denver`
 - Get an image based on a search with query parameter `location`
 - Example response:
@@ -169,7 +169,7 @@ GET `http://localhost:3000/api/v1/backgrounds?location=denver`
     }
 }
 ```
-
+## Users
 POST `http://localhost:3000/api/v1/users`
 - Create a user and get an API key in the response. Include email, password and password_confirmation in the request body
 ``` json
@@ -192,6 +192,7 @@ POST `http://localhost:3000/api/v1/users`
     }
 }
 ```
+## Log in
 POST `http://localhost:3000/api/v1/sessions`
 - Log a user in and get their API key. Include email and password in the request body
 ```json
@@ -213,6 +214,8 @@ POST `http://localhost:3000/api/v1/sessions`
     }
 }
 ```
+
+## Road Trip
 POST `http://localhost:3000/api/v1/road_trip`
 - Create a "road trip" with an origin and desitination. Include origin, destination and api_key in the request body
 ```json
