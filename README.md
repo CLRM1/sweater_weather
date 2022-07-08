@@ -9,7 +9,7 @@ Sweater Weather is a rails API that provides weather forecast data, images, and 
 - [Image search](#images)
 - [Create a user](#users)
 - [Log a user in](#log-in)
-- [Road Trip](#road-trip)
+- [Create a road trip](#road-trip)
 
 
 # Local setup
