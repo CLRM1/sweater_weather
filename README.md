@@ -3,6 +3,8 @@
 
 Sweater Weather is a rails API that provides weather forecast data, images, and estimated travel time. It consumes data from 3 external APIs (Open Weather, MapQuest, Pexels) and exposes 5 endpoints. This was a solo project by Chris Romero. 
 
+Visit the hosted API [here](https://sweaterweather-back-end.herokuapp.com/api/v1/forecast?location=denver,co) to begin making requests without setting up a local server. 
+
 ## Available endpoints:
 - [Current weather forecast](#forecast)
 - [Image search](#images)
@@ -24,7 +26,7 @@ Get api keys from the folllowing providers:
 - `rails s` to start the server on localhost:3000
 
 # Make a request
-
+ 
 ## Forecast
 GET `http://localhost:3000/api/v1/forecast?location=denver,co`
 - Get the current forecast based on a search with query parameter `location`
