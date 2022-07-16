@@ -7,7 +7,7 @@ Visit the hosted API [here](https://sweaterweather-back-end.herokuapp.com/api/v1
 
 Fork the Postman collection [here](https://www.postman.com/spacecraft-observer-79729505/workspace/sweater-weather) to run pre-built requests and tests locally. 
 
-## Available endpoints:
+# Available endpoints:
 - [Current weather forecast](#forecast)
 - [Image search](#images)
 - [Create a user](#users)
