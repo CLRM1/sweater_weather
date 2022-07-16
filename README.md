@@ -5,7 +5,7 @@ Sweater Weather is a rails API that provides weather forecast data, images, and 
 
 Visit the hosted API [here](https://sweaterweather-back-end.herokuapp.com/api/v1/forecast?location=denver,co) to begin making requests without setting up a local server. 
 
-Fork the Postman collection [here](https://www.postman.com/spacecraft-observer-79729505/workspace/sweater-weather) for pre-built requests and tests. 
+Fork the Postman collection [here](https://www.postman.com/spacecraft-observer-79729505/workspace/sweater-weather) to run pre-built requests and tests locally. 
 
 ## Available endpoints:
 - [Current weather forecast](#forecast)
