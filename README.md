@@ -16,7 +16,7 @@ Fork the Postman collection [here](https://www.postman.com/spacecraft-observer-7
 
 
 # Local setup
-Get api keys from the folllowing providers: 
+- Get api keys from the folllowing providers: 
 - [MapQuest](https://developer.mapquest.com), [Open Weather](https://openweathermap.org/api), [Pexels](https://www.pexels.com/api/)
 - `git clone` this repo
 - `cd sweater_weather`
