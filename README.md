@@ -30,7 +30,7 @@ Fork the Postman collection [here](https://www.postman.com/spacecraft-observer-7
 # Make a request
  
 ## Forecast
-GET `http://localhost:3000/api/v1/forecast?location=denver,co`
+`GET http://localhost:3000/api/v1/forecast?location=denver,co`
 - Get the current forecast based on a search with query parameter `location`
 - Example response: 
 ``` json
@@ -153,7 +153,7 @@ GET `http://localhost:3000/api/v1/forecast?location=denver,co`
 }
 ```
 ## Images
-GET `http://localhost:3000/api/v1/backgrounds?location=denver`
+`GET http://localhost:3000/api/v1/backgrounds?location=denver`
 - Get an image based on a search with query parameter `location`
 - Example response:
 
@@ -173,7 +173,7 @@ GET `http://localhost:3000/api/v1/backgrounds?location=denver`
 }
 ```
 ## Users
-POST `http://localhost:3000/api/v1/users`
+`POST http://localhost:3000/api/v1/users`
 - Create a user and get an API key in the response. Include email, password and password_confirmation in the request body
 ``` json
 {
@@ -219,7 +219,7 @@ POST `http://localhost:3000/api/v1/sessions`
 ```
 
 ## Road Trip
-POST `http://localhost:3000/api/v1/road_trip`
+`POST http://localhost:3000/api/v1/road_trip`
 - Create a "road trip" with an origin and desitination. Include origin, destination and api_key in the request body
 ```json
 {
