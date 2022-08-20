@@ -14,17 +14,30 @@ Fork the Postman collection [here](https://www.postman.com/spacecraft-observer-7
 - [Log a user in](#log-in)
 - [Create a road trip](#road-trip)
 
-
 # Local setup
 - Get api keys from the folllowing providers: 
-- [MapQuest](https://developer.mapquest.com), [Open Weather](https://openweathermap.org/api), [Pexels](https://www.pexels.com/api/)
-- `git clone` this repo
+
+     - [MapQuest](https://developer.mapquest.com)
+   
+     - [Open Weather](https://openweathermap.org/api)
+   
+     - [Pexels](https://www.pexels.com/api/)
+
+- `git clone`
+
 - `cd sweater_weather`
+
 - `bundle`
 - `rails db:{create, migrate}`
 - `bundle exec figaro install`
 - `cd config` open the application.yml file and add your API keys as environment variables: 
--  `mapquest_api_key: 'key_here', open_weather_api...pexel_api_key...`
+
+    - `mapquest_api_key: 'key_here'`
+  
+    - `open_weather_api: 'key_here'`
+   
+    - `pexel_api_key: 'key_here'`
+  
 - `rails s` to start the server on localhost:3000
 
 # Make a request
