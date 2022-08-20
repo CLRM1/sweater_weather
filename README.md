@@ -195,7 +195,7 @@ Fork the Postman collection [here](https://www.postman.com/spacecraft-observer-7
     "password_confirmation": "123"
 }
 ```
-- Exmaple response:
+- Examaple response:
 ``` json
 {
     "data": {
