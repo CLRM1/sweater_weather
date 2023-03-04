@@ -30,11 +30,11 @@ Fork the Postman collection [here](https://www.postman.com/spacecraft-observer-7
 - `bundle exec figaro install`
 - `cd config` open the application.yml file and add your API keys as environment variables: 
 
-    - `mapquest_api_key: 'key_here'`
+    - `mapquest_api_key: 'your_key_here'`
   
-    - `open_weather_api: 'key_here'`
+    - `open_weather_api: 'your_key_here'`
    
-    - `pexel_api_key: 'key_here'`
+    - `pexel_api_key: 'your_key_here'`
   
 - `rails s` to start the server on localhost:3000
 
